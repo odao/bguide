@@ -2,16 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
-        <form id="regform">
-            <label>用户名：</label> 
-            <input id="username" />
-            <br/>
-            <label>密&nbsp;&nbsp;码：</label>
-            <input id="password" type="password" />
-            <br/>
-            <input type="submit" value="提交" />
-        </form>
+        <canvas id="time" width="200" height="100">
+        您的浏览器不支持
+        </canvas>
+        <script type="text/javascript">
+            var c = document.getElementById("time"),
+            ctx = c.getContext("2d"),
+            socket = io.connect("http://192.168.2.131:9999");
+            socket.on('nowtime', function(time){
+                   ctx.clearRect(0, 0, 200, 100);
+                   ctx.fillText(time.now.toString(), 40, 40);
+            });
+        </script>
     </body>
 </html>
