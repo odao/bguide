@@ -4,6 +4,7 @@ define(function(require, exports, module){
     var BB = require('backbone');
     exports.run = function(){
         $(function(){
+           require('./loginview');
            var object = {};
            _.extend(object, BB.Events);
            object.bind('kick', function(who){
