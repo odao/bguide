@@ -1,8 +1,10 @@
-var express = require('express'),
+var log = require('./log'),
+    logger = log.create(log.INFO, 'bguide.log'),
+    express = require('express'),
     app = express.createServer();
 //    io = require('socket.io').listen(app);
 
-app.listen(9999);
+app.listen(80);
 
 app.configure(function (){
     app.use(express.static(__dirname + '/public'));

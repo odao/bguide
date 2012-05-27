@@ -2,19 +2,19 @@
  * application init.
  */
 seajs.config({
-    base: 'http://localhost:9999/',
+    base: 'http://localhost/',
     alias: {
-        'es5-safe': 'lib/es5-safe/0.9.0/es5-safe-debug',
+        'es5-safe': 'lib/es5-safe/0.9.2/es5-safe-debug',
         'json': 'lib/json/1.0.0/json-debug',
         'cookie': 'lib/cookie/1.0.0/cookie-debug',
-        'querystring': 'lib/querystring/1.0.0/querystring-debug',
-        'underscore': 'lib/underscore/1.1.7/underscore-debug',
-        'backbone': 'lib/backbone/0.5.3/backbone-debug',
-        'mustache': 'lib/mustache/0.3.1/mustache-debug',
-        'jquery': 'lib/jquery/1.6.2/jquery-debug'
+        'querystring': 'lib/querystring/1.0.2/querystring-debug',
+        'underscore': 'lib/underscore/1.3.3/underscore-debug',
+        'backbone': 'lib/backbone/0.9.2/backbone-debug',
+        'mustache': 'lib/mustache/0.5.0-dev/mustache-debug',
+        'jquery': 'lib/jquery/1.7.2/jquery-debug'
     },
     map: [
-        [ /^(.*\/src\/.*\.(?:css|js))(?:.*)$/i, '$1?20120307' ]
+        [ /^(.*\/src\/.*\.(?:css|js))(?:.*)$/i, '$1?20120528' ]
     ],
     preload: [
         Function.prototype.bind ? '': 'es5-safe',

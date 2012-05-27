@@ -7,11 +7,12 @@
  */
 define(function(require, exports, module){
     (function (){
-        var loginPanel = document.createElement('div'),
-            loginForm = document.createElement('form'),
-            loginName = document.createElement('input'),
-            loginPass = document.createElement('input'),
-            loginBtn = document.createElement('input');
+        var doc = document || {};
+        var loginPanel = doc.createElement('div'),
+            loginForm = doc.createElement('form'),
+            loginName = doc.createElement('input'),
+            loginPass = doc.createElement('input'),
+            loginBtn = doc.createElement('input');
 
         loginForm.setAttribute('action', '/login');
         loginForm.setAttribute('method', 'post');
@@ -23,6 +24,6 @@ define(function(require, exports, module){
         loginForm.appendChild(loginPass);
         loginForm.appendChild(loginBtn);
         loginPanel.appendChild(loginForm);
-        document.body.appendChild(loginPanel);
+        doc.body.appendChild(loginPanel);
     })();
 });
