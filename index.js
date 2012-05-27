@@ -9,7 +9,9 @@ app.listen(80);
 app.configure(function (){
     app.use(express.static(__dirname + '/public'));
     app.use(express.cookieParser());
+    app.use(express.bodyParser());
     app.use(express.session({ secret: 'show me the money!' }));
+    app.use(express.errorHandler());
 });
 
 app.get('/', function (req, res){
@@ -26,5 +28,10 @@ io.sockets.on('connection', function(socket){
 */
 
 app.post('/login', function (req, res){
+//    logger.info(req.body);
+    res.send(req.body);
+});
 
+process.on('uncaughtException', function(err){
+    logger.error('uncaught Exception occurred:' + err);
 });

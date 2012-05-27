@@ -7,7 +7,9 @@
  */
 define(function(require, exports, module){
     (function (){
-        var doc = document || {};
+        if(!document)
+            throw new Error('this must be run in browser.');
+        var doc = document;
         var loginPanel = doc.createElement('div'),
             loginForm = doc.createElement('form'),
             loginName = doc.createElement('input'),
@@ -16,7 +18,9 @@ define(function(require, exports, module){
 
         loginForm.setAttribute('action', '/login');
         loginForm.setAttribute('method', 'post');
+        loginName.setAttribute('name', 'username');
         loginPass.setAttribute('type', 'password');
+        loginPass.setAttribute('name', 'password');
         loginBtn.setAttribute('type', 'submit');
         loginBtn.setAttribute('value', 'login');
 
